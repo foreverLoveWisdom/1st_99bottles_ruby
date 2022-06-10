@@ -5,6 +5,7 @@ gem 'overcommit', '~> 0.58.0'
 
 group :development, :test do
   gem 'rubocop-minitest', '~> 0.20.0'
+  gem 'guard'
   gem 'guard-minitest', '~> 2.4', '>= 2.4.6'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 
