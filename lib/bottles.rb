@@ -12,6 +12,10 @@ class Bottles
     start.downto(finish).map { |number| verse(number) }.join("\n")
   end
 
+  def song
+    verses(99, 0)
+  end
+
   private
 
   def verse1(number)
