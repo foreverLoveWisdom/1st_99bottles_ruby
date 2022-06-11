@@ -9,7 +9,7 @@ class Bottles
   end
 
   def verses(start, finish)
-    "#{verse(start)}\n#{verse(finish)}"
+    start.downto(finish).map { |number| verse(number) }.join("\n")
   end
 
   private
