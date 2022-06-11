@@ -3,12 +3,30 @@
 class Bottles
   def verse(number)
     <<~VERSE
-      #{original_bottle(number)} of beer on the wall, #{original_bottle(number)} of beer.
-      Take #{one_bottle_left(number)} down and pass it around, #{decrease_bottle(number)} of beer on the wall.
+      #{verse1(number)}
+      #{verse2(number)}
     VERSE
   end
 
   private
+
+  def verse1(number)
+    if number > 1
+      "#{number} bottles of beer on the wall, #{number} bottles of beer."
+    elsif number == 1
+      '1 bottle of beer on the wall, 1 bottle of beer.'
+    else
+      'No more bottles of beer on the wall, no more bottles of beer.'
+    end
+  end
+
+  def verse2(number)
+    if number.zero?
+      'Go to the store and buy some more, 99 bottles of beer on the wall.'
+    else
+      "Take #{one_bottle_left(number)} down and pass it around, #{decrease_bottle(number)} of beer on the wall."
+    end
+  end
 
   def one_bottle_left(number)
     number > 1 ? 'one' : 'it'
@@ -23,9 +41,5 @@ class Bottles
     elsif temp.zero?
       'no more bottles'
     end
-  end
-
-  def original_bottle(number)
-    number > 1 ? "#{number} bottles" : "#{number} bottle"
   end
 end
