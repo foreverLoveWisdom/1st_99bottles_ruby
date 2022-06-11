@@ -8,6 +8,10 @@ class Bottles
     VERSE
   end
 
+  def verses(start, finish)
+    "#{verse(start)}\n#{verse(finish)}"
+  end
+
   private
 
   def verse1(number)
