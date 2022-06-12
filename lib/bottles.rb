@@ -32,15 +32,15 @@ class Bottles
     if number.zero?
       'Go to the store and buy some more, 99 bottles of beer on the wall.'
     else
-      "Take #{one_bottle_left(number)} down and pass it around, #{decrease_bottle(number)} of beer on the wall."
+      "Take #{one_bottle_left_in_word(number)} down and pass it around, #{pluralize_bottle(number)} of beer on the wall."
     end
   end
 
-  def one_bottle_left(number)
+  def one_bottle_left_in_word(number)
     number > 1 ? 'one' : 'it'
   end
 
-  def decrease_bottle(number)
+  def pluralize_bottle(number)
     temp = number - 1
     if temp > 1
       "#{temp} bottles"
